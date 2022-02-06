@@ -209,6 +209,7 @@ static void sigchld(int unused);
 static void spawn(const Arg *arg);
 static void tag(const Arg *arg);
 static void tagmon(const Arg *arg);
+static void togglefullscr(const Arg *arg);
 static void tile(Monitor *);
 static void togglebar(const Arg *arg);
 static void togglefloating(const Arg *arg);
@@ -1724,6 +1725,14 @@ togglefloating(const Arg *arg)
 			selmon->sel->w, selmon->sel->h, 0);
 	arrange(selmon);
 }
+
+void
+togglefullscr(const Arg *arg)
+{
+	if(selmon->sel)
+		setfullscreen(selmon->sel, !selmon->sel->isfullscreen);
+		}
+		
 
 void
 toggletag(const Arg *arg)
