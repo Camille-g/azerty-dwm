@@ -70,8 +70,8 @@ static Key keys[] = {
 	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_t,      spawn,          {.v = termcmd2 } },
-	{ MODKEY|ShiftMask,             XK_w,      spawn,          {.v = browser } },
-        { MODKEY,                       XK_w,      spawn,          {.v = browser2 } },
+	{ MODKEY,                       XK_w,      spawn,          {.v = browser } },
+        { MODKEY|ShiftMask,             XK_w,      spawn,          {.v = browser2 } },
 	{ MODKEY,                       XK_e,      spawn,          {.v = file } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
@@ -103,10 +103,10 @@ static Key keys[] = {
         { 0, XF86XK_AudioMicMute,	spawn,		SHCMD("pactl set-source-mute @DEFAULT_SOURCE@ toggle") },
        	{ 0, XF86XK_AudioRaiseVolume,	spawn,		SHCMD("pamixer --allow-boost -i 5; kill -44 ") },
 	{ 0, XF86XK_AudioLowerVolume,	spawn,		SHCMD("pamixer --allow-boost -d 5; kill -44 ") },
-        { MODKEY,			XK_p,      	spawn,		SHCMD("pamixer --allow-boost -i 5; kill -44") }, 
+        { MODKEY,			XK_p,      	spawn,		SHCMD("pamixer --allow-boost -i 5; kill -44") },
         { MODKEY,			XK_m,      	spawn,		SHCMD("pamixer --allow-boost -d 5; kill -44") },
         { MODKEY,XK_Print,	        spawn,		SHCMD("maim pic-full-$(date '+%y%m%d-%H%M-%S').png") },
-        { MODKEY|ShiftMask,XK_Print,	spawn,	        SHCMD("maim --hidecursor -s -$(date '+%y%m%d-%H%M-%S').png") },	
+        { MODKEY|ShiftMask,XK_Print,	spawn,	        SHCMD("maim --hidecursor -s -$(date '+%y%m%d-%H%M-%S').png") },
 	TAGKEYS(                        XK_ampersand,                     0)
 	TAGKEYS(                        XK_eacute,                        1)
 	TAGKEYS(                        XK_quotedbl,                      2)
