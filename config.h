@@ -95,17 +95,22 @@ static Key keys[] = {
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
-        { 0, XF86XK_MonBrightnessUp,	spawn,		SHCMD("xbacklight -inc 2") },
-	{ 0, XF86XK_MonBrightnessDown,	spawn,		SHCMD("xbacklight -dec 2") },
-	{ MODKEY|ShiftMask,		XK_p,		spawn,          SHCMD("xbacklight -inc 2") },
-	{ MODKEY|ShiftMask, 		XK_m,		spawn,          SHCMD("xbacklight -dec 2") },
+        { 0, XF86XK_MonBrightnessUp,	spawn,		SHCMD("brillo -q -A 2") },
+	{ 0, XF86XK_MonBrightnessDown,	spawn,		SHCMD("brillo -q -U 2") },
+
+	{ MODKEY|ShiftMask,		XK_p,		spawn,          SHCMD("brillo -q -A 2") },
+	{ MODKEY|ShiftMask, 		XK_m,		spawn,          SHCMD("brillo -q -U 2") },
+
         { 0, XF86XK_AudioMute,		spawn,		SHCMD("pamixer -t; kill -44 $(pidof dwmblocks)") },
         { 0, XF86XK_AudioMicMute,	spawn,		SHCMD("pactl set-source-mute @DEFAULT_SOURCE@ toggle") },
-       	{ 0, XF86XK_AudioRaiseVolume,	spawn,		SHCMD("pamixer --allow-boost -i 5; kill -44 ") },
+       	
+	{ 0, XF86XK_AudioRaiseVolume,	spawn,		SHCMD("pamixer --allow-boost -i 5; kill -44 ") },
 	{ 0, XF86XK_AudioLowerVolume,	spawn,		SHCMD("pamixer --allow-boost -d 5; kill -44 ") },
-        { MODKEY,			XK_p,      	spawn,		SHCMD("pamixer --allow-boost -i 5; kill -44") },
+        
+	{ MODKEY,			XK_p,      	spawn,		SHCMD("pamixer --allow-boost -i 5; kill -44") },
         { MODKEY,			XK_m,      	spawn,		SHCMD("pamixer --allow-boost -d 5; kill -44") },
-        { MODKEY,XK_Print,	        spawn,		SHCMD("maim pic-full-$(date '+%y%m%d-%H%M-%S').png") },
+        
+	{ MODKEY,XK_Print,	        spawn,		SHCMD("maim pic-full-$(date '+%y%m%d-%H%M-%S').png") },
         { MODKEY|ShiftMask,XK_Print,	spawn,	        SHCMD("maim --hidecursor -s -$(date '+%y%m%d-%H%M-%S').png") },
 	TAGKEYS(                        XK_ampersand,                     0)
 	TAGKEYS(                        XK_eacute,                        1)
